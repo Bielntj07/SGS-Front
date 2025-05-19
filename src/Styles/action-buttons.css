@@ -1,0 +1,101 @@
+/* Botão Editar */
+.action-btn-edit {
+  background: #91a352;
+  color: #222 !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45em 1.25em;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: filter .15s;
+}
+.action-btn-edit:hover {
+  filter: brightness(1.08);
+  background: #7e9146;
+}
+
+/* Botão Excluir */
+.action-btn-delete {
+  background: #f44b4b;
+  color: #222 !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45em 1.25em;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: filter .15s;
+}
+.action-btn-delete:hover { filter: brightness(0.93); }
+
+/* Botão Adicionar */
+.action-btn-add {
+  background: #38472b;
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.52em 1.35em;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: filter .15s;
+}
+.action-btn-add:hover { filter: brightness(1.08); }
+
+/* Ícones dos botões de ação */
+.action-btn-icon {
+  stroke: currentColor !important;
+  fill: none !important;
+  margin-right: 0.35em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .action-btn-edit,
+  .action-btn-edit *,
+  .action-btn-delete,
+  .action-btn-delete * {
+    color: #222 !important;
+    stroke: #222 !important;
+    fill: none !important;
+  }
+  .action-btn-add,
+  .action-btn-add * {
+    color: #fff !important;
+    stroke: #fff !important;
+  }
+  .action-btn-icon {
+    stroke: currentColor !important;
+    fill: none !important;
+  }
+}
+
+.action-btn-edit, .action-btn-edit *,
+.action-btn-delete, .action-btn-delete * {
+  color: #222 !important;
+  stroke: #222 !important;
+  fill: none !important;
+}
+
+.action-btn-edit, .action-btn-edit *,
+.action-btn-delete, .action-btn-delete * {
+  color: #222 !important;
+}
+.action-btn-edit .action-btn-text,
+.action-btn-delete .action-btn-text {
+  color: #222 !important;
+}
+
+body:not(.light-mode) .card-container .action-btn-edit .action-btn-text,
+body:not(.light-mode) .card-container .action-btn-delete .action-btn-text {
+  color: #222 !important;
+}

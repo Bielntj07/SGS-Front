@@ -4,6 +4,16 @@ export interface SalaProps {
   id: number;
   nome: string;
   capacidade: number;
+  andar: string;
+  laboratorio: boolean;
+}
+
+export interface Reserva {
+  turma: string;
+  data: string;
+  hora_inicio: string;
+  hora_termino: string;
+  professor?: string;
 }
 
 // GET - buscar todas as salas
@@ -22,7 +32,7 @@ export const getReservasSala = async (sala_id: number) => {
 };
 
 // POST - criar nova sala
-export const createSala = async (sala: { nome: string; capacidade: number }) => {
+export const createSala = async (sala: { nome: string; capacidade: number; laboratorio: boolean }) => {
   try {
     const salaCriada = await fetchData("salas", {
       method: "POST",
@@ -39,7 +49,7 @@ export const createSala = async (sala: { nome: string; capacidade: number }) => 
 };
 
 // PUT - atualizar sala existente
-export const updateSala = async (id: number, sala: { nome: string; capacidade: number }) => {
+export const updateSala = async (id: number, sala: { nome: string; capacidade: number; laboratorio: boolean }) => {
   try {
     const salaAtualizada = await fetchData(`salas/${id}`, {
       method: "PUT",
@@ -69,7 +79,7 @@ export const deleteSala = async (id: number) => {
 };
 
 // POST - reservar sala
-export const reservarSala = async (sala_id: number, reserva: { turma: string; data: string; hora_inicio: string; hora_termino: string }) => {
+export const reservarSala = async (sala_id: number, reserva: { turma: string; data: string; hora_inicio: string; hora_termino: string; professor?: string }) => {
   try {
     const resultado = await fetchData(`salas/${sala_id}/reservar`, {
       method: "POST",
@@ -82,6 +92,23 @@ export const reservarSala = async (sala_id: number, reserva: { turma: string; da
   } catch (error) {
     console.error("Erro ao reservar sala:", error);
     throw new Error("Erro ao reservar sala");
+  }
+};
+
+// PUT - atualizar reserva existente
+export const updateReservaSala = async (reserva_id: string | number, reserva: { turma: string; data: string; hora_inicio: string; hora_termino: string; professor?: string }) => {
+  try {
+    const resultado = await fetchData(`reservas/${reserva_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reserva),
+    });
+    return resultado;
+  } catch (error) {
+    console.error("Erro ao atualizar reserva:", error);
+    throw new Error("Erro ao atualizar reserva");
   }
 };
 

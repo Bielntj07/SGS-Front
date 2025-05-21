@@ -33,6 +33,7 @@ export default function SalasList({ salas }: SalasListProps) {
     <div className="alunoslist-container">
       <div className="alunoslist-header">
         <h1 className="alunoslist-title">Lista de Salas</h1>
+        <hr style={{border: 'none', borderTop: '1px solid #444', margin: '0.7rem 0 1rem 0'}} />
         <Link href="/salas/novo">
           <button className="action-btn-add">
             <span style={{display:'inline-flex',alignItems:'center',gap:'0.5rem'}}>
@@ -52,7 +53,8 @@ export default function SalasList({ salas }: SalasListProps) {
               <>
                 <p>Nome: {sala.nome}</p>
                 <p>Capacidade: {sala.capacidade}</p>
-                
+                <p>Andar: {sala.andar}</p>
+                <p>É Laboratório: {sala.laboratorio ? 'Sim' : 'Não'}</p>
                 <p><strong>ID:</strong> {sala.id}</p>
               </>
             }

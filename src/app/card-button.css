@@ -1,0 +1,28 @@
+.card-btn {
+  width: 100%;
+  margin-top: 1.3rem;
+  padding: 0.7rem 0;
+  background: #111;
+  color: #fff !important;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.07rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #232823, 0 6px 24px #0006;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.13s;
+  text-align: center;
+  display: inline-block;
+}
+
+.card-btn:hover {
+  background: #232823;
+  color: #fff;
+  box-shadow: 0 4px 0 #232823, 0 12px 32px #0007;
+  transform: translateY(-3px) scale(1.04);
+}
+.card-btn:active {
+  box-shadow: 0 1px 0 #232823, 0 2px 8px #0005;
+  transform: translateY(1px) scale(0.99);
+}

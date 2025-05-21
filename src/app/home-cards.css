@@ -1,0 +1,16 @@
+.home-card {
+  background: rgb(139, 169, 75);
+  color: #232823;
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.22s cubic-bezier(.4,0,.2,1), background 0.18s cubic-bezier(.4,0,.2,1);
+  /* cursor padrão, não pointer */
+}
+.home-card h3, .home-card p, .home-card span {
+  color: #232823 !important;
+  cursor: default;
+  user-select: none;
+}
+.home-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px 0 #0007, 0 0 0 4px #a6c24a, 0 0 0 1.5px #fff2 inset;
+  background: #a6c24a;
+}

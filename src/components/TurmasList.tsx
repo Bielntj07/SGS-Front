@@ -33,6 +33,7 @@ export default function TurmasList({ turmas }: TurmasListProps) {
     <div className="alunoslist-container">
       <div className="alunoslist-header">
         <h1 className="alunoslist-title">Lista de Turmas</h1>
+        <hr style={{border: 'none', borderTop: '1px solid #444', margin: '0.7rem 0 1rem 0'}} />
         <Link href="/turmas/novo">
           <button className="action-btn-add">
             <span style={{display:'inline-flex',alignItems:'center',gap:'0.5rem'}}>

@@ -82,6 +82,8 @@
   font-size: 1.08rem;
   font-weight: 500;
   transition: background 0.2s, color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 .sidebar-link svg {
   color: #585D46;

@@ -2,6 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 700px) {
+  .action-btn-reservar,
+  .action-btn-edit,
+  .action-btn-delete {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .action-btn-edit .lucide-icon,
+  .action-btn-delete .lucide-icon {
+    margin-right: 6px;
+    margin-left: 0;
+  }
+  .sala-table td[data-label="Ações"],
+  .mini-reservas-table td[data-label="Ações"] {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .sala-table td[data-label="Ações"] button,
+  .mini-reservas-table td[data-label="Ações"] button {
+    width: 100%;
+    margin: 0;
+  }
+  .table-container {
+    padding: 0 4px;
+  }
+  .sala-card {
+    margin-bottom: 18px;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+  .sala-table,
+  .mini-reservas-table {
+    width: 100%;
+    font-size: 0.96rem;
+    min-width: unset;
+    background: transparent;
+  }
+  .sala-table th,
+  .mini-reservas-table th,
+  .sala-table td,
+  .mini-reservas-table td {
+    padding: 7px 6px;
+    font-size: 0.98rem;
+    text-align: left;
+    white-space: normal;
+  }
+  .sala-table thead,
+  .mini-reservas-table thead {
+    display: none; /* Esconde cabeçalho para mobile */
+  }
+  .sala-table tbody tr,
+  .mini-reservas-table tbody tr {
+    display: block;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #444;
+    background: #232323;
+  }
+  .sala-table td,
+  .mini-reservas-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 7px 0;
+    position: relative;
+  }
+  .sala-table td:before,
+  .mini-reservas-table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #b3b93a;
+    margin-right: 8px;
+    min-width: 90px;
+    display: inline-block;
+  }
+  .action-btn-reservar,
+  .action-btn-edit,
+  .action-btn-delete {
+    width: 100%;
+    margin: 6px 0 0 0;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+.action-btn-reservar {
+  background: #ffa600;
+  color: #232323;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-right: 0;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+  display: block;
+}
+.action-btn-reservar:hover {
+  background: #cc8400;
+  color: #fff;
+}
+
 @layer base {
   body {
     background: #232323;

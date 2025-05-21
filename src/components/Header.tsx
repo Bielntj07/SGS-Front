@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSidebar } from "@/SidebarContext";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import "../Styles/Sidebar.css";
 import "../Styles/action-buttons.css";
@@ -9,6 +10,11 @@ import { Menu, X, Home, GraduationCap, Users, BookOpen, Building2, Sun, Moon, Ch
 
 export default function Header() {
   const { menuAberto, setMenuAberto } = useSidebar();
+  const router = useRouter();
+  const handleCloseSidebar = (href: string) => {
+    if (isMobile) setMenuAberto(false);
+    router.push(href);
+  }
   const [lightMode, setLightMode] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -50,10 +56,11 @@ export default function Header() {
       {!menuAberto && isMobile && (
         <button
           className="sidebar-toggle"
+          style={{ marginTop: 18 }}
           onClick={() => setMenuAberto(true)}
           aria-label="Abrir menu lateral"
         >
-          <Menu size={26} />
+          <Menu size={36} />
         </button>
       )}
 
@@ -72,21 +79,21 @@ export default function Header() {
           <span className="sidebar-title">SGS</span>
         </div>
         <nav className="sidebar-nav">
-          <Link href="/" className="sidebar-link">
-            <Home size={20} /> Home
-          </Link>
+          <button className="sidebar-link sidebar-main-link" onClick={() => handleCloseSidebar("/")}>
+            <Home size={18} /> Home
+          </button>
 
           <div className="sidebar-group">
             <span className="sidebar-group-title">Cadastrar</span>
-            <Link href="/alunos" className="sidebar-link sidebar-sublink">
+            <button className="sidebar-link sidebar-sublink" onClick={() => handleCloseSidebar("/alunos")}> 
               <GraduationCap size={18} /> Alunos
-            </Link>
-            <Link href="/professores" className="sidebar-link sidebar-sublink">
+            </button>
+            <button className="sidebar-link sidebar-sublink" onClick={() => handleCloseSidebar("/professores")}> 
               <Users size={18} /> Professores
-            </Link>
-            <Link href="/turmas" className="sidebar-link sidebar-sublink">
+            </button>
+            <button className="sidebar-link sidebar-sublink" onClick={() => handleCloseSidebar("/turmas")}> 
               <BookOpen size={18} /> Turmas
-            </Link>
+            </button>
             <Link href="/salas" className="sidebar-link sidebar-sublink">
               <Building2 size={18} /> Salas
             </Link>
@@ -94,16 +101,16 @@ export default function Header() {
 
           <div className="sidebar-group">
             <span className="sidebar-group-title">Gerenciar</span>
-            <Link href="/gerencia/salas" className="sidebar-link sidebar-sublink">
+            <button className="sidebar-link sidebar-sublink" onClick={() => handleCloseSidebar("/gerencia/salas")}> 
               <Building2 size={18} /> Salas
-            </Link>
+            </button>
           </div>
 
           <div className="sidebar-group">
             <span className="sidebar-group-title">Consulta</span>
-            <Link href="/consulta/salas" className="sidebar-link sidebar-sublink">
+            <button className="sidebar-link sidebar-sublink" onClick={() => handleCloseSidebar("/consulta/salas")}> 
               <Building2 size={18} /> Salas
-            </Link>
+            </button>
           </div>
         </nav>
         <footer className="sidebar-footer">

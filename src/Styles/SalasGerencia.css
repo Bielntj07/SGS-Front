@@ -162,6 +162,22 @@
   .container {
     padding: 0.7rem;
   }
+  .sala-table th,
+  .mini-reservas-table th {
+    text-align: left !important;
+  }
+  .sala-table td,
+  .mini-reservas-table td {
+    text-align: left !important;
+  }
+  .sala-table th:last-child,
+  .mini-reservas-table th:last-child {
+    text-align: center !important;
+  }
+  .sala-table td[data-label="Ações"],
+  .mini-reservas-table td[data-label="Ações"] {
+    text-align: center !important;
+  }
   .sala-table, .sala-table th, .sala-table td {
     font-size: 0.97rem !important;
     padding: 7px 4px !important;

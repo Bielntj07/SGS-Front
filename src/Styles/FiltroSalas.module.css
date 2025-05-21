@@ -1,0 +1,45 @@
+.filtroContainer {
+  margin-bottom: 24px;
+  background: #8ba94b;
+  border-radius: 8px;
+  padding: 1.2rem 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 6px #0002;
+}
+.filtroAcoes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.filtroLabel {
+  margin-right: 8px;
+  color: #111;
+}
+.filtroInput, .filtroSelect {
+  min-width: 120px;
+  color: #111;
+}
+.menuFiltro {
+  position: relative;
+}
+.menuDropdown {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px #0003;
+  z-index: 10;
+  min-width: 150px;
+}
+.menuItem {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  color: #111;
+}
+.menuItem:last-child {
+  border-bottom: none;
+}
